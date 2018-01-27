@@ -30,7 +30,7 @@ public class Demo {
 		AdminLoginMapper adminLoginMapper=(AdminLoginMapper) a.getBean("adminLoginMapper");
 		System.out.println(adminLoginMapper);
 		Administrator administrator=adminLoginMapper.adminLogin("1");
-		System.out.println(administrator.getAdminacount());
+		
 	
 	}
 	//测试AdminLoginServiceImput是否注入spring中

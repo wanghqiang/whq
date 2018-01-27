@@ -1,43 +1,43 @@
 package cn.wq.po;
-//管理员实体类
+
 public class Administrator {
-    private Integer adminid;
+    private Integer adminId;
 
-    private String adminacount;
+    private String adminAcount;
 
-    private String adminpassword;
+    private String adminPassword;
 
-    private String adminisprimary;
+    private String adminIsPrimary;
 
-    public Integer getAdminid() {
-        return adminid;
+    public Integer getAdminId() {
+        return adminId;
     }
 
-    public void setAdminid(Integer adminid) {
-        this.adminid = adminid;
+    public void setAdminId(Integer adminId) {
+        this.adminId = adminId;
     }
 
-    public String getAdminacount() {
-        return adminacount;
+    public String getAdminAcount() {
+        return adminAcount;
     }
 
-    public void setAdminacount(String adminacount) {
-        this.adminacount = adminacount == null ? null : adminacount.trim();
+    public void setAdminAcount(String adminAcount) {
+        this.adminAcount = adminAcount == null ? null : adminAcount.trim();
     }
 
-    public String getAdminpassword() {
-        return adminpassword;
+    public String getAdminPassword() {
+        return adminPassword;
     }
 
-    public void setAdminpassword(String adminpassword) {
-        this.adminpassword = adminpassword == null ? null : adminpassword.trim();
+    public void setAdminPassword(String adminPassword) {
+        this.adminPassword = adminPassword == null ? null : adminPassword.trim();
     }
 
-    public String getAdminisprimary() {
-        return adminisprimary;
+    public String getAdminIsPrimary() {
+        return adminIsPrimary;
     }
 
-    public void setAdminisprimary(String adminisprimary) {
-        this.adminisprimary = adminisprimary == null ? null : adminisprimary.trim();
+    public void setAdminIsPrimary(String adminIsPrimary) {
+        this.adminIsPrimary = adminIsPrimary == null ? null : adminIsPrimary.trim();
     }
 }

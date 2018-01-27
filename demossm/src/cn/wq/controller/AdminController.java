@@ -18,7 +18,7 @@ public class AdminController {
 		if(administrator==null){
 			return "redirect:/jsp/AdminLogin.jsp";
 		}
-		else if (administrator.getAdminpassword().equals(password)==false) {
+		else if (administrator.getAdminPassword().equals(password)==false) {
 			return "redirect:/jsp/AdminLogin.jsp";
 		}
 		return "sucess";

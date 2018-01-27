@@ -4,15 +4,50 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>MMT管理员登陆</title>
-</head>
-<body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>MMT管理员登录</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/wq.css"/>
+    <style>
+    	
+    </style>
 
-	<form action="${pageContext.request.contextPath }/adminLoginController.action">
+    
+  </head>
+  <body>
+    <div class="container" >
+		<div style="height: 150px;">
+</div>
+<div class="row">
+	<div class="col-lg-5"></div>
+	<div class="col-lg-3">
+		<form class="form-signin" action="${pageContext.request.contextPath }/adminLoginController.action">
+			<h2 class="form-signin-heading">Please sign in</h2>
+			<label for="acount" class="sr-only">Email address</label>
+			<input type="text" id="acount" class="form-control" style="width: 250px;" placeholder="Email address" required autofocus>
+			<label for="password" class="sr-only">Password</label>
+			<input type="password" id="password" class="form-control" style="width: 250px;" placeholder="Password" required>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" value="remember-me"> Remember me
+				</label>
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 250px;">Sign in</button>
+		</form>
+	</div>
+	<div class="col-lg-4"></div>
+</div>
+</div>
+<form action="${pageContext.request.contextPath }/adminLoginController.action">
 		<input type="text" name="acount" >
 		<input type="password" name="password" >
 		<input type="submit" value="tijao">
 	</form>
-	
-</body>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
 </html>
+
+	
