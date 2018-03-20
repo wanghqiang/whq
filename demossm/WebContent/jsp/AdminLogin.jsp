@@ -8,8 +8,8 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>MMT管理员登录</title>
     <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="css/wq.css"/>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../css/wq.css"/>
     <style>
     	
     </style>
@@ -25,10 +25,10 @@
 	<div class="col-lg-3">
 		<form class="form-signin" action="${pageContext.request.contextPath }/adminLoginController.action">
 			<h2 class="form-signin-heading">Please sign in</h2>
-			<label for="acount" class="sr-only">Email address</label>
-			<input type="text" id="acount" class="form-control" style="width: 250px;" placeholder="Email address" required autofocus>
-			<label for="password" class="sr-only">Password</label>
-			<input type="password" id="password" class="form-control" style="width: 250px;" placeholder="Password" required>
+			<label for="acount1" class="sr-only">Email address</label>
+			<input type="text" id="acount1" name="acount" class="form-control" style="width: 250px;" placeholder="Email address" required >
+			<label for="password1" class="sr-only">Password</label>
+			<input type="password" id="password1" name="password" class="form-control" style="width: 250px;" placeholder="Password" required>
 			<div class="checkbox">
 				<label>
 					<input type="checkbox" value="remember-me"> Remember me
@@ -40,11 +40,6 @@
 	<div class="col-lg-4"></div>
 </div>
 </div>
-<form action="${pageContext.request.contextPath }/adminLoginController.action">
-		<input type="text" name="acount" >
-		<input type="password" name="password" >
-		<input type="submit" value="tijao">
-	</form>
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>

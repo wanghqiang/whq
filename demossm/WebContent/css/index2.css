@@ -1,0 +1,18 @@
+.wq-row{
+	width:85%;
+	background-color:#000000;
+	margin:0 auto;
+}
+.wq-col-lg-4{
+	background-color:#f6f6f6;
+	padding-left:0;
+	padding-right:0;
+}
+.wq-nav {
+	text-align: center;
+	padding-top:30px;
+	padding-bottom:40px;
+}
+.btn{
+	margin:10px 10px;
+}

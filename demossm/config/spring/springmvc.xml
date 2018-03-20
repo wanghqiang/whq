@@ -25,7 +25,12 @@
         	<property name="prefix" value="jsp/"></property>
         	<property name="suffix" value=".jsp"></property>
         </bean>
-        
-    
+    <!-- 配置拦截器 -->  
+    <mvc:interceptors>
+    	<mvc:interceptor>
+    	<mvc:mapping path="/issueInformation.action"/>
+    	<bean class="cn.wq.interceptor.Interceptor1"></bean>
+    	</mvc:interceptor>
+    </mvc:interceptors>
      
 </beans>

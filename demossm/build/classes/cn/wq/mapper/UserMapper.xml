@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.wq.mapper.UserMapper" >
+  	<select id="userList" resultType="User">
+  		select * from user
+  	</select>
+  	<select id="addUser" parameterType="User">
+  		 insert into user (UserAcount, UserPassword, 
+      UserName, UserQQ, UserPhone, 
+      UserUniversity, Rule)
+    values (#{userAcount}, #{userPassword}, 
+      #{userName}, #{userQQ}, #{userPhone}, 
+      #{userUniversity}, #{rule})
+  	</select>
+</mapper>

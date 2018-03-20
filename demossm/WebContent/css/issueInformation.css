@@ -1,0 +1,22 @@
+.wq-div{
+	background-color:#f6f6f6;
+	height:400px;
+}
+.wq-container {
+    width: 80%;
+    background-color: aqua;
+    margin: 0 auto;
+}
+.wq-form{
+	background-color:#ffffff;
+	width:80%;
+	height:400px;
+	margin:0 auto;
+}
+.wq-form-control{
+	width:80%;
+}
+.wq-col-lg3{
+	padding-right: 0px;
+	padding-left: 0px;
+}
