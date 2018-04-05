@@ -1,73 +1,96 @@
 package cn.wq.po;
 
+import java.util.Date;
+
 public class User {
-    private Integer userId;
+	    private Integer userId;
 
-    private String userAcount;
+	    private String userAcount;
 
-    private String userPassword;
+	    private String userPassWord;
 
-    private String userName;
+	    private String userName;
 
-    private String userQQ;
+	    private String userImg;
 
-    private String userPhone;
+	    private String userSex;
 
-    private String userUniversity;
+	    private String userLocation;
 
-    public Integer getUserId() {
-        return userId;
-    }
+	    private Date userTime;
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
+	    private String userEmail;
 
-    public String getUserAcount() {
-        return userAcount;
-    }
+	    public Integer getUserId() {
+	        return userId;
+	    }
 
-    public void setUserAcount(String userAcount) {
-        this.userAcount = userAcount == null ? null : userAcount.trim();
-    }
+	    public void setUserId(Integer userId) {
+	        this.userId = userId;
+	    }
 
-    public String getUserPassword() {
-        return userPassword;
-    }
+	    public String getUserAcount() {
+	        return userAcount;
+	    }
 
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword == null ? null : userPassword.trim();
-    }
+	    public void setUserAcount(String userAcount) {
+	        this.userAcount = userAcount == null ? null : userAcount.trim();
+	    }
 
-    public String getUserName() {
-        return userName;
-    }
+	    public String getUserPassWord() {
+	        return userPassWord;
+	    }
 
-    public void setUserName(String userName) {
-        this.userName = userName == null ? null : userName.trim();
-    }
+	    public void setUserPassWord(String userPassWord) {
+	        this.userPassWord = userPassWord == null ? null : userPassWord.trim();
+	    }
 
-    public String getUserQQ() {
-        return userQQ;
-    }
+	    public String getUserName() {
+	        return userName;
+	    }
 
-    public void setUserQQ(String userQQ) {
-        this.userQQ = userQQ == null ? null : userQQ.trim();
-    }
+	    public void setUserName(String userName) {
+	        this.userName = userName == null ? null : userName.trim();
+	    }
 
-    public String getUserPhone() {
-        return userPhone;
-    }
+	    public String getUserImg() {
+	        return userImg;
+	    }
 
-    public void setUserPhone(String userPhone) {
-        this.userPhone = userPhone == null ? null : userPhone.trim();
-    }
+	    public void setUserImg(String userImg) {
+	        this.userImg = userImg == null ? null : userImg.trim();
+	    }
 
-    public String getUserUniversity() {
-        return userUniversity;
-    }
+	    public String getUserSex() {
+	        return userSex;
+	    }
 
-    public void setUserUniversity(String userUniversity) {
-        this.userUniversity = userUniversity == null ? null : userUniversity.trim();
-    }
+	    public void setUserSex(String userSex) {
+	        this.userSex = userSex == null ? null : userSex.trim();
+	    }
+
+	    public String getUserLocation() {
+	        return userLocation;
+	    }
+
+	    public void setUserLocation(String userLocation) {
+	        this.userLocation = userLocation == null ? null : userLocation.trim();
+	    }
+
+	    public Date getUserTime() {
+	        return userTime;
+	    }
+
+	    public void setUserTime(Date userTime) {
+	        this.userTime = userTime;
+	    }
+
+	    public String getUserEmail() {
+	        return userEmail;
+	    }
+
+	    public void setUserEmail(String userEmail) {
+	        this.userEmail = userEmail == null ? null : userEmail.trim();
+	    }
+	
 }

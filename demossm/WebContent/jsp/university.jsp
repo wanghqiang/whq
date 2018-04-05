@@ -22,7 +22,6 @@
 				url:"${pageContext.request.contextPath}/uList2.action",
 				type:"Post",
 				success:function(data){
-					console.log(data[0].province);
 					for(var i=0;i<data.length;i++){
 						var text="<h1>"+data[i].province+"</h1>";
 						$("#h1").append(text);

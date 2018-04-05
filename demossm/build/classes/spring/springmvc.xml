@@ -22,7 +22,6 @@
 	<!-- 配置视图解析器 -->
 	<!-- 视图解释器 -->
         <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        	<property name="prefix" value="jsp/"></property>
         	<property name="suffix" value=".jsp"></property>
         </bean>
     <!-- 配置拦截器 -->  
@@ -31,6 +30,19 @@
     	<mvc:mapping path="/issueInformation.action"/>
     	<bean class="cn.wq.interceptor.Interceptor1"></bean>
     	</mvc:interceptor>
+    	<mvc:interceptor>
+    	<mvc:mapping path="/**"/>
+    	<bean class="cn.wq.interceptor.Interceptor2"></bean>
+    	</mvc:interceptor>
     </mvc:interceptors>
+    
+    
+    <!-- 文件上传,id必须设置为multipartResolver -->
+	<bean id="multipartResolver"
+	class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	<!-- 设置文件上传大小 -->
+	<property name="maxUploadSize" value="5000000" />
+	</bean>
+    
      
 </beans>

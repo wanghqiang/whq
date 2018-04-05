@@ -7,22 +7,18 @@
   	</select>
   	<!-- 查询所有学校店铺 -->
   	<select id="adminList" resultType="cn.wq.po.Administrator">
-  		select * from administrator
+  		select * from administrator where Permission="低"
   	</select>
   	<!-- 添加学校店铺 -->
   	<insert id="addAdmin" parameterType="cn.wq.po.Administrator">
   		insert into administrator (AdminAcount, AdminPassword, 
-      University, Province, Permission, 
-      AdminName, AdminPhone, AdminQQ
-      )
-    values (#{adminAcount,jdbcType=VARCHAR}, #{adminPassword,jdbcType=VARCHAR}, 
-      #{university,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, #{permission,jdbcType=VARCHAR}, 
-      #{adminName,jdbcType=VARCHAR}, #{adminPhone,jdbcType=VARCHAR}, #{adminQQ,jdbcType=VARCHAR}
+      University, Province)  values (#{adminAcount,jdbcType=VARCHAR}, #{adminPassword,jdbcType=VARCHAR}, 
+      #{university,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR} 
       )
   	</insert>
   	<!-- 删除学校店铺 -->
-  	<delete id="deleteAdmin" parameterType="cn.wq.po.Administrator">
-  		delete from administrator where AdminId=#{adminId,jdbcType=INTEGER}
+  	<delete id="deleteAdmin" parameterType="int">
+  		delete from administrator where AdminId=#{id,jdbcType=INTEGER}
   	</delete>
   	<!-- 修改店铺管理员权限 -->
   	<update id="updatePerminssion" parameterType="cn.wq.po.Administrator">

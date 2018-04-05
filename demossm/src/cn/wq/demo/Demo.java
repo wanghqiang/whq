@@ -10,12 +10,15 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import cn.wq.mapper.AdminLoginMapper;
+import cn.wq.mapper.InformationMapper;
 import cn.wq.mapper.UniversityMapper;
 import cn.wq.mapper.UserMapper;
 import cn.wq.po.Administrator;
-
+import cn.wq.po.Information;
 import cn.wq.po.User;
 import cn.wq.serviceImput.AdminLoginServiceImput;
+import cn.wq.vo.InformationConditon;
+import cn.wq.vo.PageBean;
 
 
 public class Demo {
@@ -124,4 +127,25 @@ public class Demo {
 			System.out.println(u.getProvince());
 		}
 	}
+	/*
+	 * 测试高级查询二手信息
+	 */
+	@Test
+	public void informationList(){
+		ApplicationContext a=new ClassPathXmlApplicationContext("classpath:spring/applicationContext-dao.xml");
+		InformationMapper i=(InformationMapper) a.getBean("informationMapper");
+		InformationConditon conditon=new InformationConditon();
+		Information information=new Information();
+		information.setCity("成都");
+		information.setType("求购");
+		information.setUniversity("成都信息工程大学");
+		PageBean<Information> pageBean =new PageBean<>();
+		pageBean.setPc(0);
+		pageBean.setPs(2);
+		List<Information> informations = i.informationList(conditon,pageBean);
+		for(Information u:informations){
+			System.out.println(u.getId());
+		}
+	}
+	
 }

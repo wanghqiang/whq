@@ -17,6 +17,8 @@ import cn.wq.service.UniversityService;
 public class UniversityController {
 	@Autowired
 	private UniversityService universityService;
+	
+	
 	@RequestMapping(value="uList.action")
 	@ResponseBody
 	public List<Administrator> uList(){

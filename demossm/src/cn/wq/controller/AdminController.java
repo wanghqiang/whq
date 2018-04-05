@@ -24,32 +24,51 @@ public class AdminController {
 	@RequestMapping(value="adminLoginController")
 	public String adminLoginController(String acount, String password,HttpServletRequest request){
 		Administrator administrator = adminLoginServiceImput.adminLogin(acount);
-		if(administrator!=null&&administrator.getAdminPassword().equals(password)==true&&administrator.getPermission().equals("高")){
-			request.getSession().setAttribute("username", acount);
-			return "background";
+		//判断账号密码是否正确
+		try {
+			if(administrator!=null&&administrator.getAdminPassword().equals(password)==true){
+				request.getSession().setAttribute("admin", administrator);
+				//判断管理员权限高低
+				if(administrator.getPermission().equals("高")){
+					return "admin/main1";
+				}
+				return "admin/main2";
+			}
+		} catch (Exception e) {
+			return "admin/adLogin";
 		}
-		return "adLogin";
+		
+		return "admin/adLogin";
 	}
+	/*
+	 * 所有学校店铺列表
+	 */
 	@RequestMapping(value="adminList.action")
 	public ModelAndView adminList(){
 		ModelAndView modelAndView=new ModelAndView();
 		List<Administrator> adminList = adminLoginServiceImput.adminList();
 		modelAndView.addObject("adminList", adminList);
-		modelAndView.setViewName("background");
+		modelAndView.setViewName("admin/shop-close");
 		return modelAndView;
 	}
 	//添加学校店铺（商铺管理员）
 	@RequestMapping(value="addAdmin.action")
-	public void addAdmin(Administrator administrator,
-			HttpServletResponse response) throws IOException{
+	@ResponseBody
+	public Integer addAdmin(Administrator administrator) throws IOException{
 	
-		int i=adminLoginServiceImput.addAdmin(administrator);
-		response.getWriter().print(i);
+		Integer i=adminLoginServiceImput.addAdmin(administrator);
+		System.out.println(888);
+		
+		return i;
 		
 	}
+
 	//删除学校店铺（商铺管理员）
 	@RequestMapping(value="deleteAdmin.action")
-	public void deleteAdmin(Administrator administrator){
+	@ResponseBody
+	public Integer deleteAdmin(int id){
+		Integer i = adminLoginServiceImput.deleteAdmin(id);
+		return i;
 	}
 	//修改权限
 	

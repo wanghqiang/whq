@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.wq.mapper.InformationMapper">
+
+<insert id="insert" parameterType="cn.wq.po.Information">
+    insert into information (Id, Type, Title, 
+      Details, Privce, CreateTime, 
+      UserId, Phone, QQ, 
+      FPicture, Picture, City, 
+      University, ItemType)
+    values (#{id,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{details,jdbcType=VARCHAR}, #{privce,jdbcType=DOUBLE}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{userId,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{QQ,jdbcType=VARCHAR}, 
+      #{FPicture,jdbcType=VARCHAR}, #{picture,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
+      #{university,jdbcType=VARCHAR}, #{itemType,jdbcType=VARCHAR})
+  </insert>
+<!-- 拼接information的添加sql -->
+<sql id="condition_information">
+	<where>
+  		<if test="condition.city!=null and condition.city!=''">
+  			and City=#{condition.city,jdbcType=VARCHAR}
+  		</if>
+  		<if test="condition.type!=null and condition.type!=''">
+  			and Type=#{condition.type,jdbcType=VARCHAR}
+  		</if>
+  		<if test="condition.university!=null and condition.university!=''">
+  			and University=#{condition.university,jdbcType=VARCHAR}
+  		</if>
+  		<if test="condition.privce!=null and condition.privce!=''">
+  			and Privce=#{condition.privce,jdbcType=VARCHAR}
+  		</if>
+  		<if test="condition.itemType!=null and condition.itemType!=''">
+  			and ItemType=#{condition.itemType,jdbcType=VARCHAR}
+  		</if>
+  	</where>
+</sql>
+<!-- 分页查询满足条件的information -->
+  <select id="informationList" resultType="cn.wq.po.Information">
+  	select * from information
+  	<include refid="condition_information"></include>
+  		limit #{pageBean.pc,jdbcType=INTEGER},#{pageBean.ps,jdbcType=INTEGER}
+  </select>
+  <!-- 统计满足条件的information总记录数 -->
+  <select id="countInformation" resultType="int">
+  	select count(*) from information
+  	<include refid="condition_information"></include>
+  	<where>
+  		
+  	</where>
+  </select>
+</mapper>

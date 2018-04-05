@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.wq.mapper.ItemMapper" >
+  <resultMap id="BaseResultMap" type="cn.wq.po.Item" >
+    <id column="ItemId" property="itemId" jdbcType="INTEGER" />
+    <result column="ItemName" property="itemName" jdbcType="VARCHAR" />
+    <result column="TIile" property="TIile" jdbcType="VARCHAR" />
+    <result column="ItemImage" property="itemImage" jdbcType="VARCHAR" />
+    <result column="time" property="time" jdbcType="TIMESTAMP" />
+    <result column="ItemType" property="itemType" jdbcType="VARCHAR" />
+    <result column="ItemNumber" property="itemNumber" jdbcType="INTEGER" />
+    <result column="Detail" property="detail" jdbcType="VARCHAR" />
+    <result column="ItemPrivce" property="itemPrivce" jdbcType="DOUBLE"/>
+    <result column="University" property="university" jdbcType="VARCHAR"/>
+  </resultMap>
+  <!-- 查询所有商品 -->
+  <select id="queryItemAll" resultType="cn.wq.po.Item">
+  	select * from Item
+  </select>
+</mapper>

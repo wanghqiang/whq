@@ -7,8 +7,10 @@ import cn.wq.po.Administrator;
 public interface AdminLoginMapper {
 	//管理员登录
 	Administrator adminLogin(String acount);
-	//管理员列表
+	//店铺列表
 	List<Administrator> adminList();
-	//添加管理员
+	//添加店铺
 	int addAdmin(Administrator administrator);
+	//关闭店铺
+	int deleteAdmin(int id);
 }

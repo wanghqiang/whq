@@ -26,6 +26,9 @@ public class AdminLoginServiceImput implements AdminLoginService {
 		List<Administrator> adminList =adminLoginMapper.adminList();
 		return adminList;
 	}
+	/*
+	 * 开通店铺
+	 */
 	public int addAdmin(Administrator administrator) {
 		// TODO Auto-generated method stub
 		try {
@@ -34,6 +37,13 @@ public class AdminLoginServiceImput implements AdminLoginService {
 		} catch (Exception e) {
 			return -1;
 		}
+	}
+	/*
+	 * 关闭店铺
+	 */
+	public int deleteAdmin(int id) {
+		int i = adminLoginMapper.deleteAdmin(id);
+		return i;
 	}
 
 }

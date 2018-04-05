@@ -10,7 +10,6 @@
 .wq-form{
 	background-color:#ffffff;
 	width:80%;
-	height:400px;
 	margin:0 auto;
 }
 .wq-form-control{
@@ -19,4 +18,20 @@
 .wq-col-lg3{
 	padding-right: 0px;
 	padding-left: 0px;
+}
+.hidden2{
+    display: none;
+    background-color:#f6f6f6;
+    
+}
+
+.wq-picture{
+	height:400px;
+}
+.span{
+	padding-top:25px;
+}
+.wq-picture-label{
+	background-color:#f6f6f6;
+	padding-left:45%;
 }
